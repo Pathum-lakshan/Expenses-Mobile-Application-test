@@ -54,7 +54,7 @@
 
 
                 <com.google.android.material.textfield.TextInputEditText
-
+                    android:id="@+id/textUsername"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@color/black"
@@ -79,7 +79,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="300dp"
                 android:layout_height="50dp"
-                android:hint="@string/label"
+                android:hint="@string/password"
                 android:textColor="@color/black"
                 android:textColorHint="@color/green_light"
                 android:textSize="14sp"
@@ -90,6 +90,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
 
+                    android:id="@+id/textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="textPassword"
@@ -106,7 +107,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical">
-
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
             <Button
                 android:id="@+id/btnSignIn"
                 style="?attr/materialButtonOutlinedStyle"
@@ -144,6 +147,13 @@
             android:text="@string/or_sign"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text=""
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -153,7 +163,8 @@
 
             <ImageView
                 android:layout_width="45dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:src="@drawable/google"/>
 
             <View
                 android:layout_width="45dp"
@@ -161,7 +172,8 @@
 
             <ImageView
                 android:layout_width="45dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:src="@drawable/facebook"/>
 
             <View
                 android:layout_width="45dp"
@@ -170,7 +182,9 @@
 
             <ImageView
                 android:layout_width="45dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:src="@drawable/twitter"
+                />
 
             <View
                 android:layout_width="45dp"
@@ -178,11 +192,9 @@
 
             <ImageView
                 android:layout_width="45dp"
-                android:layout_height="match_parent" />
-
-            <View
-                android:layout_width="45dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:src="@drawable/instagram"
+                />
 
         </LinearLayout>
 
@@ -196,8 +208,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal|center_vertical">
 
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/don_t_have_an_account"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/signUp"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/sign_up"
+                android:textColor="@color/purple_500"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout

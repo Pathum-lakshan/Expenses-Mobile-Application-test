@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">first</string>
+    <string name="app_from">from</string>
+    <string name="hello">ceylon linux</string>
+    <string name="label">user name</string>
+    <string name="content_description_end_icon">user</string>
+    <string name="action_sign_in">sign in</string>
+    <string name="or_sign">OR SIGN</string>
+
+</resources>

@@ -93,7 +93,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 Map<String, String> params = new HashMap<String, String>();
 
-
                 params.put("name", name);
                 params.put("job", job);
                 return params;
@@ -102,6 +101,5 @@ public class LoginActivity extends AppCompatActivity {
 
         queue.add(request);
 
-        System.out.println(respObj);
     }
 }

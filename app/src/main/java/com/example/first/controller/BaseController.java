@@ -1,11 +1,9 @@
-package com.example.newexpenseapplication.controller;
+package com.example.first.controller;
 
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.first.model.CustomNameValuePair;
 
-import com.example.newexpenseapplication.model.CustomNameValuePair;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

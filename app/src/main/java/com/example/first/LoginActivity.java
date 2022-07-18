@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,36 +12,40 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.first.controller.BaseController;
+import com.example.first.model.CustomNameValuePair;
+import com.example.first.model.User;
+import com.example.first.util.SharedPref;
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
-    private JSONObject respObj;
+    private JSONArray respObj;
     private TextInputEditText textUsername,textPassword;
     private Button btnSignInOrRegister;
     private TextView signUp;
+    private SharedPref sharedPref;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +56,6 @@ public class LoginActivity extends AppCompatActivity {
         textPassword=findViewById(R.id.textPassword);
         btnSignInOrRegister=findViewById(R.id.btnSignIn);
         signUp=findViewById(R.id.signUp);
-        HashMap<String, String> paramss = new HashMap<String, String>();
-
-
-
         btnSignInOrRegister.setOnClickListener(view -> {
             try {
                 signIn();
@@ -66,19 +67,71 @@ public class LoginActivity extends AppCompatActivity {
 
     private void signIn() throws IOException {
 
-        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-
-        startActivity(intent);
-        finish();
-
-
-    }
 /*
 
-    private void postDataUsingVolley(String name, String job) {
-        // url to post our data
-        String url = "https://jsonplaceholder.typicode.com/posts";
+        if (textUsername.getText().equals("") || textPassword.getText().equals("")) {
 
+        } else {
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+
+                    try {
+                        ArrayList<CustomNameValuePair> customNameValuePairs = new ArrayList<>();
+                        customNameValuePairs.add(new CustomNameValuePair("username", textUsername.getText().toString()));
+                        customNameValuePairs.add(new CustomNameValuePair("name", textPassword.getText().toString()));
+
+
+                        String response = BaseController.postToServerGzip("https://jsonplaceholder.typicode.com/users", customNameValuePairs);
+
+
+                        postDataUsingVolley();
+
+                        JSONObject jsonObject = new JSONObject(response);
+
+                        if (jsonObject.getBoolean("result"))
+                        {
+
+
+                            User user = User.getUserFromJson(jsonObject);
+
+                            if (user != null)
+                            {
+                                sharedPref.saveUser(user);
+
+                            }
+
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                    startActivity(intent);
+
+                                }
+                            });
+
+                        }
+
+
+
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+
+        }
+*/
+        Intent intent = new Intent(LoginActivity.this,DashBoard.class);
+        startActivity(intent);
+    }
+
+/*
+    private void postDataUsingVolley() {
+        // url to post our data
+        String url = "https://jsonplaceholder.typicode.com/users";
 
         // creating a new variable for our request queue
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
@@ -88,7 +141,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(String response) {
 
                 try {
-                    respObj = new JSONObject(response);
+                    respObj = new JSONArray(response);
+
+                    System.out.println(respObj);
 
 
                 } catch (JSONException e) {
@@ -109,16 +164,16 @@ public class LoginActivity extends AppCompatActivity {
 
                 Map<String, String> params = new HashMap<String, String>();
 
-                params.put("name", name);
-                params.put("job", job);
+
+
                 return params;
             }
         };
 
         queue.add(request);
 
-    }
-
+    }*/
+/*
     public static JSONObject getJsonObject(String url, HashMap<String, String> params) {
 
         StringBuilder sbParams = new StringBuilder();
@@ -222,8 +277,8 @@ public class LoginActivity extends AppCompatActivity {
 
         // return JSON Object
         return jObj;
-    }
-
+    }*/
+/*
     public static JSONObject getJSONObjectFromURL(String urlString) throws IOException, JSONException {
 
         HttpURLConnection urlConnection = null;

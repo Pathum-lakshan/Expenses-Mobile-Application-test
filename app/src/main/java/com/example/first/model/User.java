@@ -1,6 +1,5 @@
-package com.example.newexpenseapplication.model;
+package com.example.first.model;
 
-import android.graphics.Bitmap;
 import android.util.Log;
 
 import org.json.JSONObject;

@@ -2,15 +2,19 @@
     <!-- Base application theme. -->
     <style name="Theme.NewExpenseApplication" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorPrimary">@color/light_black</item>
+        <item name="colorPrimaryDark">@color/light_dark</item>
+        <item name="colorAccent">#FFFFFF</item>
         <!-- Customize your theme here. -->
     </style>
 
     <style name="Theme.NewExpenseApplication.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+    </style><style name="Theme.NewExpenseApplication.NoTitle">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
 
     </style>
 </resources>

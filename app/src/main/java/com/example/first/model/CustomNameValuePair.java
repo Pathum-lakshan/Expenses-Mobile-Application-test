@@ -1,4 +1,4 @@
-package com.example.newexpenseapplication.model;
+package com.example.first.model;
 
 /**
  * Created by TaZ on 4/23/15.

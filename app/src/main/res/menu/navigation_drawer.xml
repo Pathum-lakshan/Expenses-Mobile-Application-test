@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  
+<group android:checkableBehavior="single">
+
+    <item android:id="@+id/home1"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home"/>
+    <item android:id="@+id/home2"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/homew"/>
+    <item android:id="@+id/home3"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+    <item android:id="@+id/home4"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+    <item android:id="@+id/home5"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+
+    <item android:title="home">
+        <menu >
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/home6"
+                    android:icon="@drawable/ic_baseline_home_24"
+                    android:title="Home"/>
+                <item android:id="@+id/home7"
+                    android:icon="@drawable/ic_baseline_home_24"
+                    android:title="Home"/>
+                <item android:id="@+id/home8"
+                    android:icon="@drawable/ic_baseline_home_24"
+                    android:title="Home"/>
+            </group>
+
+        </menu>
+    </item>
+
+
+
+</group>
 </menu>

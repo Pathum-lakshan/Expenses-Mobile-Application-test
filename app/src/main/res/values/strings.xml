@@ -9,5 +9,30 @@
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="sign_up">Sign UP</string>
     <string name="password">password</string>
+    <string name="add_customer">ADD CUSTOMER</string>
+    <string name="manage_customer">Manage Customer</string>
+    <string name="add_customers">Add Customer</string>
+    <string name="update_customer">Update Customer</string>
+    <string name="delete_customer">Delete Customer</string>
+    <string name="search_customer">Search Customer</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_address">Customer Address</string>
+    <string name="customer_email">Customer Email</string>
+    <string name="customer_contact">Customer Contact</string>
+    <string name="fe_male">Fe Male</string>
+    <string name="male">Male</string>
+    <string name="gender">Gender</string>
+    <string name="prompt">Customers</string>
+    <string name="add_customer_btn">Add Customer</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="updates">Update</string>
+    <string name="delete">Delete</string>
+    <string name="pathum_ceylonlinux_lk">pathum@ceylonlinux.lk</string>
+    <string name="ceylon_linux">Ceylon Linux</string>
+    <string name="home">Home</string>
+        <string name="open">Open</string>
+        <string name="close">Close</string>
+    <string name="homew">Home</string>
 
 </resources>

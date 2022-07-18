@@ -1,11 +1,12 @@
-package com.example.newexpenseapplication.util;
+package com.example.first.util;
 
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.example.newexpenseapplication.model.User;
+
+import com.example.first.model.User;
 import com.google.gson.Gson;
 
 public class SharedPref {
